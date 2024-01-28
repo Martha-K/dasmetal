@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-// import ScrollToTop from "./components/Scroll"
 
 import { Home } from "./pages/Home";
 import { Header } from "./components/Header/Header";
@@ -9,7 +8,6 @@ import { Products } from "./pages/Products";
 function App() {
   return (
     <Routes>
-      {/* <ScrollToTop /> */}
       <Route path="/" element={<Header />}>
         <Route index element={<Home />} />
         <Route path="/products" element={<Products />}>
