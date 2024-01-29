@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Nav, NavList, StyledLink, Li, Div, Logo } from "./headerStyles.js";
 import logo from "../../img/logo.jpg";
 import { Footer } from "../Footer/Footer";
