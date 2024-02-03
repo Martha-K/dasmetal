@@ -9,6 +9,7 @@ import {
   Logo,
   Flag,
   FlagsWrapper,
+  Flags,
   Navigation,
 } from "./headerStyles.js";
 import logo from "../../img/logo.jpg";
@@ -61,26 +62,26 @@ export const Header = () => {
               </Li>
             </NavList>
           </Nav>
-          <FlagsWrapper
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
-            <Flag src={activeLanguage} alt="Flag" />
-            {hovered && (
-              <div>
-                {languages
-                  .filter((el) => el.img !== activeLanguage)
-                  .map((el) => (
-                    <Flag
-                      key={el.name}
-                      src={el.img}
-                      onClick={() => changeLanguage(el)}
-                    />
-                  ))}
-              </div>
-            )}
-          </FlagsWrapper>
         </Navigation>
+        <FlagsWrapper
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <Flag src={activeLanguage} alt="Flag" />
+          {hovered && (
+            <Flags>
+              {languages
+                .filter((el) => el.img !== activeLanguage)
+                .map((el) => (
+                  <Flag
+                    key={el.name}
+                    src={el.img}
+                    onClick={() => changeLanguage(el)}
+                  />
+                ))}
+            </Flags>
+          )}
+        </FlagsWrapper>
       </Div>
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />

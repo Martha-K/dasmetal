@@ -16,5 +16,4 @@ margin-right: 90px;
 
 export const ListDay = styled.ul`
   list-style-type: none;
-
 `
