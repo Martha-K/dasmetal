@@ -10,13 +10,18 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import slide3 from "../img/slide3.jpg";
 import slide4 from "../img/slide4.jpg";
 import slide from "../img/slide.jpg";
-import setka from "../img/setka.jpg";
+import slide2 from "../img/slide2.jpg";
+import armature from "../img/armature.jpg";
+import armature2 from "../img/armature2.jpg";
+import armature3 from "../img/armature3.jpg";
+import grid from "../img/grid.jpg";
+import grid2 from "../img/grid2.jpg";
+import grid3 from "../img/grid3.jpg";
 import {
   StyledSlide,
   Hero,
   StyledDiv,
   CompanyDescription,
-  Title,
   FittingsInfo,
   Text,
   Image,
@@ -51,84 +56,57 @@ export const Home = () => {
               <StyledSlide src={slide} />
             </SwiperSlide>
             <SwiperSlide>
-              <StyledSlide src={setka} />
+              <StyledSlide src={slide2} />
             </SwiperSlide>
           </Swiper>
         </StyledDiv>
       </Hero>
       <CompanyDescription>
-        <Title> {t("body.title")}</Title>
         <Subtitle>{t("body.subtitle")}</Subtitle>
         <FittingsInfo>
           <ComponentObserver Item={<Text>{t("body.introduction")}</Text>} />
           <ComponentObserver
-            Item={
-              <Image
-                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                alt="photo"
-              />
-            }
+            position="right"
+            Item={<Image src={armature} alt="armature" />}
           />
         </FittingsInfo>
         <FittingsInfo>
+          <ComponentObserver Item={<Image src={armature2} alt="armature" />} />
           <ComponentObserver
-            Item={
-              <Image
-                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                alt="photo"
-              />
-            }
+            position="right"
+            Item={<Text>{t("body.keyStrengths")}</Text>}
           />
-          <ComponentObserver Item={<Text>{t("body.keyStrengths")}</Text>} />
         </FittingsInfo>
         <FittingsInfo>
           <ComponentObserver
             Item={<Text>{t("body.versatileConstructionApplications")}</Text>}
           />
           <ComponentObserver
-            Item={
-              <Image
-                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                alt="photo"
-              />
-            }
+            position="right"
+            Item={<Image src={armature3} alt="armature" />}
           />
         </FittingsInfo>
         <Subtitle>{t("body.secondSubtitle")}</Subtitle>
         <FittingsInfo>
+          <ComponentObserver Item={<Image src={grid} alt="grid" />} />
           <ComponentObserver
-            Item={
-              <Image
-                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                alt="photo"
-              />
-            }
+            position="right"
+            Item={<Text>{t("body.overview")}</Text>}
           />
-          <ComponentObserver Item={<Text>{t("body.overview")}</Text>} />
         </FittingsInfo>
         <FittingsInfo>
           <ComponentObserver
             Item={<Text>{t("body.advantachesAtGlanze")}</Text>}
           />
           <ComponentObserver
-            Item={
-              <Image
-                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                alt="photo"
-              />
-            }
+            position="right"
+            Item={<Image src={grid2} alt="grid" />}
           />
         </FittingsInfo>
         <FittingsInfo>
+          <ComponentObserver Item={<Image src={grid3} alt="grid" />} />
           <ComponentObserver
-            Item={
-              <Image
-                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                alt="photo"
-              />
-            }
-          />
-          <ComponentObserver
+            position="right"
             Item={<Text>{t("body.applicationsConstructionLandscape")}</Text>}
           />
         </FittingsInfo>

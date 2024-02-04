@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const StyledSlide = styled.img`
   max-width: 1100px;
@@ -11,7 +11,6 @@ export const StyledSlide = styled.img`
 `;
 
 export const Hero = styled.div`
-  /* background-color: #bdc3c7; */
   margin-top: 30px;
 `;
 
@@ -26,10 +25,7 @@ export const CompanyDescription = styled.div`
   display: block;
   text-align: center;
   background-color: white;
-`;
-
-export const Title = styled.h1`
-  font-size: 70px;
+  overflow-x: hidden;
 `;
 
 export const FittingsInfo = styled.div`
@@ -47,6 +43,8 @@ export const Text = styled.p`
 
 export const Image = styled.img`
   width: 460px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 20px;
 `;
 
