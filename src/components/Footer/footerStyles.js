@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Div = styled.div`
 display: flex;
 justify-content: space-around;
-background: linear-gradient(to right, #2c3e50, #bdc3c7);
+background: #5e6b80;
+color: white;
 
 `
 

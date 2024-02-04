@@ -1,7 +1,8 @@
-import header from './header.json';
-import body from './body.json'
+import header from "./header.json";
+import body from "./body.json";
+import aboutUs from "./aboutUs.json";
+import footer from "./footer.json";
 
-import aboutUs from './aboutUs.json'
+const defaultExport = { header, body, aboutUs, footer };
 
-const defaultExport = {header, body,aboutUs}
 export default defaultExport;

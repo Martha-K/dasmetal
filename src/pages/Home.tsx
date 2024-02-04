@@ -11,7 +11,16 @@ import slide3 from "../img/slide3.jpg";
 import slide4 from "../img/slide4.jpg";
 import slide from "../img/slide.jpg";
 import setka from "../img/setka.jpg";
-import { StyledSlide, Hero, StyledDiv,CompanyDescription,Title } from "./homeStyles";
+import {
+  StyledSlide,
+  Hero,
+  StyledDiv,
+  CompanyDescription,
+  Title,
+  FittingsInfo,
+  Text,
+  Subtitle,
+} from "./homeStyles";
 import { useTranslation } from "react-i18next";
 
 export const Home = () => {
@@ -48,10 +57,23 @@ export const Home = () => {
       </Hero>
       <CompanyDescription>
         <Title> {t("body.title")}</Title>
-        <h2>{t("body.subtitle")}</h2>
-        <p>{t("body.introduction")}</p>
-        <p>{t("body.keyStrengths")}</p>
-        <p>{t("body.versatileConstructionApplications")}</p>
+        <Subtitle>{t("body.subtitle")}</Subtitle>
+        <FittingsInfo>
+          <Text>{t("body.introduction")}</Text>
+          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="photo" width='360px'/>
+        </FittingsInfo>
+        <FittingsInfo>
+          
+          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="photo" width='360px'/>
+          <Text>{t("body.keyStrengths")}</Text>
+        </FittingsInfo>
+        <FittingsInfo>
+          <Text>{t("body.versatileConstructionApplications")}</Text>
+          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="photo" width='360px'/>
+        </FittingsInfo>
+
+        {/* <p>{t("body.keyStrengths")}</p> */}
+        {/* <p>{t("body.versatileConstructionApplications")}</p> */}
         <h2>{t("body.secondSubtitle")}</h2>
         <p>{t("body.overview")}</p>
         <p>{t("body.advantachesAtGlanze")}</p>

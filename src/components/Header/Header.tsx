@@ -11,7 +11,7 @@ import {
   FlagsWrapper,
   Flags,
   Navigation,
-} from "./headerStyles.js";
+} from "./headerStyles";
 import logo from "../../img/logo.jpg";
 import { Footer } from "../Footer/Footer";
 import { useTranslation } from "react-i18next";
@@ -20,6 +20,42 @@ import i18n from "i18next";
 import uk from "../../img/flags/uk.png";
 import en from "../../img/flags/en.png";
 import ru from "../../img/flags/ru.png";
+
+// export const products = [
+//   {
+//     setka: [
+//       {
+//         asdfa: { name: "", price: "", image: "" },
+//       },
+//       {
+//         asdfa: { name: "", price: "", image: "" },
+//       },
+//       {
+//         asdfa: { name: "", price: "", image: "" },
+//       },
+//     ],
+//   },
+//   {
+//     armatura: [
+//       {
+//         asdfa: { name: "", price: "", image: "" },
+//       },
+//       {
+//         asdfa: { name: "", price: "", image: "" },
+//       },
+//       {
+//         asdfa: { name: "", price: "", image: "" },
+//       },
+//     ],
+//   },
+// ];
+
+// const a = () => <div>
+//   products.map(el => <div>{el.map(el=><div>
+//     <p>{el.name}</p>
+
+//   </div>)}</div>)
+// </div>
 
 const languages = [
   { name: "uk", img: uk },
@@ -68,19 +104,17 @@ export const Header = () => {
           onMouseLeave={() => setHovered(false)}
         >
           <Flag src={activeLanguage} alt="Flag" />
-          {hovered && (
-            <Flags>
-              {languages
-                .filter((el) => el.img !== activeLanguage)
-                .map((el) => (
-                  <Flag
-                    key={el.name}
-                    src={el.img}
-                    onClick={() => changeLanguage(el)}
-                  />
-                ))}
-            </Flags>
-          )}
+          <Flags hovered={hovered}>
+            {languages
+              .filter((el) => el.img !== activeLanguage)
+              .map((el) => (
+                <Flag
+                  key={el.name}
+                  src={el.img}
+                  onClick={() => changeLanguage(el)}
+                />
+              ))}
+          </Flags>
         </FlagsWrapper>
       </Div>
       <Suspense fallback={<div>Loading page...</div>}>

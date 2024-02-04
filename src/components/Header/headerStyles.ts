@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+interface FlagsWrapperProps {
+  hovered: boolean;
+}
+
 export const Div = styled.div`
   position: relative;
   display: flex;
@@ -61,17 +65,15 @@ export const Flag = styled.img`
 
 export const FlagsWrapper = styled.div`
   position: absolute;
-  height: fit-content;
+  overflow: hidden;
   cursor: pointer;
   right: 7px;
   top: 28px;
+  transform-origin: top;
 `;
 
-export const Flags = styled.div`
-  /* height: 0;
-  transition: all 0.3s ease-in;
-
-  &:hover {
-    height: 20px;
-  } */
+export const Flags = styled.div<FlagsWrapperProps>`
+  overflow: hidden;
+  height: ${(props) => (props.hovered ? "54px" : 0)};
+  transition: all 0.3s ease-in-out;
 `;
