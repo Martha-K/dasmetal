@@ -2,7 +2,7 @@
 // import { Footer } from "../components/Footer/Footer"
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { ComponentObserver } from "../helpers/ComponentObserver";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -19,6 +19,7 @@ import {
   Title,
   FittingsInfo,
   Text,
+  Image,
   Subtitle,
 } from "./homeStyles";
 import { useTranslation } from "react-i18next";
@@ -59,25 +60,78 @@ export const Home = () => {
         <Title> {t("body.title")}</Title>
         <Subtitle>{t("body.subtitle")}</Subtitle>
         <FittingsInfo>
-          <Text>{t("body.introduction")}</Text>
-          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="photo" width='360px'/>
+          <ComponentObserver Item={<Text>{t("body.introduction")}</Text>} />
+          <ComponentObserver
+            Item={
+              <Image
+                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                alt="photo"
+              />
+            }
+          />
         </FittingsInfo>
         <FittingsInfo>
-          
-          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="photo" width='360px'/>
-          <Text>{t("body.keyStrengths")}</Text>
+          <ComponentObserver
+            Item={
+              <Image
+                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                alt="photo"
+              />
+            }
+          />
+          <ComponentObserver Item={<Text>{t("body.keyStrengths")}</Text>} />
         </FittingsInfo>
         <FittingsInfo>
-          <Text>{t("body.versatileConstructionApplications")}</Text>
-          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="photo" width='360px'/>
+          <ComponentObserver
+            Item={<Text>{t("body.versatileConstructionApplications")}</Text>}
+          />
+          <ComponentObserver
+            Item={
+              <Image
+                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                alt="photo"
+              />
+            }
+          />
         </FittingsInfo>
-
-        {/* <p>{t("body.keyStrengths")}</p> */}
-        {/* <p>{t("body.versatileConstructionApplications")}</p> */}
-        <h2>{t("body.secondSubtitle")}</h2>
-        <p>{t("body.overview")}</p>
-        <p>{t("body.advantachesAtGlanze")}</p>
-        <p>{t("body.applicationsConstructionLandscape")}</p>
+        <Subtitle>{t("body.secondSubtitle")}</Subtitle>
+        <FittingsInfo>
+          <ComponentObserver
+            Item={
+              <Image
+                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                alt="photo"
+              />
+            }
+          />
+          <ComponentObserver Item={<Text>{t("body.overview")}</Text>} />
+        </FittingsInfo>
+        <FittingsInfo>
+          <ComponentObserver
+            Item={<Text>{t("body.advantachesAtGlanze")}</Text>}
+          />
+          <ComponentObserver
+            Item={
+              <Image
+                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                alt="photo"
+              />
+            }
+          />
+        </FittingsInfo>
+        <FittingsInfo>
+          <ComponentObserver
+            Item={
+              <Image
+                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                alt="photo"
+              />
+            }
+          />
+          <ComponentObserver
+            Item={<Text>{t("body.applicationsConstructionLandscape")}</Text>}
+          />
+        </FittingsInfo>
       </CompanyDescription>
     </>
   );
