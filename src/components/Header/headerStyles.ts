@@ -9,7 +9,7 @@ export const Div = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 7px;
+  padding: 7px 20px;
   background: linear-gradient(to right, #bdc3c7, #2c3e50);
   color: white;
   position: sticky;
@@ -67,7 +67,7 @@ export const FlagsWrapper = styled.div`
   position: absolute;
   overflow: hidden;
   cursor: pointer;
-  right: 7px;
+  right: 20px;
   top: 28px;
   transform-origin: top;
 `;

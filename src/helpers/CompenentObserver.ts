@@ -22,7 +22,7 @@ export const Div = styled.div`
   &.visible {
     animation: fadeInFromLeft 0.5s ease-out forwards;
 
-    &.src-prop {
+    &.right {
       animation: fadeInFromRight 0.5s ease-out forwards;
     }
   }

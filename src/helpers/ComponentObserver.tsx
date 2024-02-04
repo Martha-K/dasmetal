@@ -2,14 +2,16 @@ import React, { useState, useEffect, useRef, ReactNode } from "react";
 import { Div } from "./CompenentObserver";
 
 interface ComponentObserverProps {
+  position?: string;
   Item: ReactNode;
 }
 
 export const ComponentObserver: React.FC<ComponentObserverProps> = ({
   Item,
+  position,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isSrcProp, setIsSrcProp] = useState(false);
+  const [isRight, setIsRight] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,10 +34,8 @@ export const ComponentObserver: React.FC<ComponentObserverProps> = ({
     }
 
     if (React.isValidElement(Item)) {
-      const itemProps = Item.props;
-
-      if (Item.props.hasOwnProperty("src")) {
-        setIsSrcProp(true);
+      if (position) {
+        setIsRight(true);
       }
     }
 
@@ -49,7 +49,7 @@ export const ComponentObserver: React.FC<ComponentObserverProps> = ({
   return (
     <Div
       ref={ref}
-      className={`${isVisible ? "visible" : ""} ${isSrcProp ? "src-prop" : ""}`}
+      className={`${isVisible ? "visible" : ""} ${isRight ? "right" : ""}`}
     >
       {Item}
     </Div>
