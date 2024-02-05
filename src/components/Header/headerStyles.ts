@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 interface FlagsWrapperProps {
-  hovered: boolean;
+  "data-hovered": boolean;
 }
 
 export const Div = styled.div`
@@ -15,7 +15,7 @@ export const Div = styled.div`
   position: sticky;
   top: 0;
   z-index: 3;
-  height: 67px;
+  height: 70px;
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -30,6 +30,7 @@ export const StyledLink = styled(NavLink)`
 
 export const Logo = styled.img`
   width: 70px;
+  border-radius: 8px;
 `;
 
 export const Nav = styled.nav`
@@ -60,7 +61,8 @@ export const Li = styled.li`
 
 export const Flag = styled.img`
   display: flex;
-  width: 25px;
+  width: 34px;
+  border-radius: 10px;
 `;
 
 export const FlagsWrapper = styled.div`
@@ -68,12 +70,12 @@ export const FlagsWrapper = styled.div`
   overflow: hidden;
   cursor: pointer;
   right: 20px;
-  top: 28px;
+  top: 24px;
   transform-origin: top;
 `;
 
 export const Flags = styled.div<FlagsWrapperProps>`
   overflow: hidden;
-  height: ${(props) => (props.hovered ? "54px" : 0)};
+  height: ${(props) => (props["data-hovered"] ? "64px" : "0")};
   transition: all 0.3s ease-in-out;
 `;

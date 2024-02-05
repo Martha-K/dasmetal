@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from "react";
-import { Div } from "./CompenentObserver";
+import { Div } from "./ComponentObserverStyles";
 
 interface ComponentObserverProps {
   position?: string;
