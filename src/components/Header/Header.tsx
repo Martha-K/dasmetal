@@ -81,11 +81,9 @@ export const Header = () => {
   return (
     <div>
       <Div>
-        <div>
-          <StyledLink to="/">
-            <Logo src={logo} alt="Logo" />
-          </StyledLink>
-        </div>
+        <StyledLink to="/">
+          <Logo src={logo} alt="Logo" />
+        </StyledLink>
         <Navigation>
           <Nav>
             <NavList>

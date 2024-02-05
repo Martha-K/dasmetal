@@ -1,6 +1,3 @@
-// import { Header } from "../components/Header/Header"
-// import { Footer } from "../components/Footer/Footer"
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ComponentObserver } from "../helpers/ComponentObserver";
 import "swiper/css";
@@ -26,7 +23,7 @@ import {
   Text,
   Image,
   Subtitle,
-} from "./homeStyles";
+} from "./HomeStyles";
 import { useTranslation } from "react-i18next";
 
 export const Home = () => {
@@ -96,7 +93,7 @@ export const Home = () => {
         </FittingsInfo>
         <FittingsInfo>
           <ComponentObserver
-            Item={<Text>{t("body.advantachesAtGlanze")}</Text>}
+            Item={<Text>{t("body.advantagesAtGlance")}</Text>}
           />
           <ComponentObserver
             position="right"

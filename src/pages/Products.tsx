@@ -1,9 +1,9 @@
-import {Div} from './productsStyles'
+import { Div } from "./ProductsStyles";
 
-export const Products = ()=>{
-    return (
-        <Div>
-           <div>
+export const Products = () => {
+  return (
+    <Div>
+      <div>
         <h1> ТОВ "ДАСМЕТАЛ"</h1>
         <h2>Композитна Арматура</h2>
         <p>
@@ -44,6 +44,6 @@ export const Products = ()=>{
           елементів.
         </p>
       </div>
-        </Div>
-    )
-}
+    </Div>
+  );
+};
