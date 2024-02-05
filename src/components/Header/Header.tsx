@@ -21,41 +21,6 @@ import uk from "../../img/flags/uk.png";
 import en from "../../img/flags/en.png";
 import ru from "../../img/flags/ru.png";
 
-// export const products = [
-//   {
-//     setka: [
-//       {
-//         asdfa: { name: "", price: "", image: "" },
-//       },
-//       {
-//         asdfa: { name: "", price: "", image: "" },
-//       },
-//       {
-//         asdfa: { name: "", price: "", image: "" },
-//       },
-//     ],
-//   },
-//   {
-//     armatura: [
-//       {
-//         asdfa: { name: "", price: "", image: "" },
-//       },
-//       {
-//         asdfa: { name: "", price: "", image: "" },
-//       },
-//       {
-//         asdfa: { name: "", price: "", image: "" },
-//       },
-//     ],
-//   },
-// ];
-
-// const a = () => <div>
-//   products.map(el => <div>{el.map(el=><div>
-//     <p>{el.name}</p>
-
-//   </div>)}</div>)
-// </div>
 
 const languages = [
   { name: "uk", img: uk },
