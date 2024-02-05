@@ -104,7 +104,7 @@ export const Header = () => {
           onMouseLeave={() => setHovered(false)}
         >
           <Flag src={activeLanguage} alt="Flag" />
-          <Flags hovered={hovered}>
+          <Flags data-hovered={hovered}>
             {languages
               .filter((el) => el.img !== activeLanguage)
               .map((el) => (

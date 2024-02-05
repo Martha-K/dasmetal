@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Div = styled.div`
+  visibility: hidden;
+
   @keyframes fadeInFromLeft {
     from {
       transform: translateX(-400px);
@@ -20,10 +22,11 @@ export const Div = styled.div`
   }
 
   &.visible {
-    animation: fadeInFromLeft 0.5s ease-out forwards;
+    animation: fadeInFromLeft 0.5s ease-in-out forwards;
+    visibility: visible;
 
     &.right {
-      animation: fadeInFromRight 0.5s ease-out forwards;
+      animation: fadeInFromRight 0.5s ease-in-out forwards;
     }
   }
 `;

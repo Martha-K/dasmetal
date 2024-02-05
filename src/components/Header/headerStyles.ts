@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 interface FlagsWrapperProps {
-  hovered: boolean;
+  "data-hovered": boolean;
 }
 
 export const Div = styled.div`
@@ -76,6 +76,6 @@ export const FlagsWrapper = styled.div`
 
 export const Flags = styled.div<FlagsWrapperProps>`
   overflow: hidden;
-  height: ${(props) => (props.hovered ? "64px" : "0")};
+  height: ${(props) => (props["data-hovered"] ? "64px" : "0")};
   transition: all 0.3s ease-in-out;
 `;
