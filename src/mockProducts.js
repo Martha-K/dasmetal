@@ -1,70 +1,68 @@
-import armature from "./img/armature.jpg"
+import armature from "./img/armature.jpg";
 
-[
+export const mockProduct = [
   {
     armature: [
       {
         name: "Armature",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "1"
+        id: "1",
       },
       {
         name: "Armature",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "2"
-
+        id: "2",
       },
-       {
+      {
         name: "Armature",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "3"
-
+        id: "3",
       },
-       {
+      {
         name: "Armature",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "4"
-
+        id: "4",
       },
     ],
   },
   {
-    grid: [ {
+    grid: [
+      {
         name: "Grid",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "5"
-
-      }, {
+        id: "5",
+      },
+      {
         name: "Grid",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "6"
-
-      }, {
+        id: "6",
+      },
+      {
         name: "Grid",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "7"
-
-      }, {
+        id: "7",
+      },
+      {
         name: "Grid",
-        image: {armature},
+        image: armature,
         price: 24,
         inStock: true,
-        id: "8"
-
-      },],
+        id: "8",
+      },
+    ],
   },
 ];

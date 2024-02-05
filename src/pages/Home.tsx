@@ -59,30 +59,34 @@ export const Home = () => {
         </StyledDiv>
       </Hero>
       <CompanyDescription>
-        <Subtitle>{t("body.subtitle")}</Subtitle>
-        <FittingsInfo>
-          <ComponentObserver Item={<Text>{t("body.introduction")}</Text>} />
-          <ComponentObserver
-            position="right"
-            Item={<Image src={armature} alt="armature" />}
-          />
-        </FittingsInfo>
-        <FittingsInfo>
-          <ComponentObserver Item={<Image src={armature2} alt="armature" />} />
-          <ComponentObserver
-            position="right"
-            Item={<Text>{t("body.keyStrengths")}</Text>}
-          />
-        </FittingsInfo>
-        <FittingsInfo>
-          <ComponentObserver
-            Item={<Text>{t("body.versatileConstructionApplications")}</Text>}
-          />
-          <ComponentObserver
-            position="right"
-            Item={<Image src={armature3} alt="armature" />}
-          />
-        </FittingsInfo>
+        <div>
+          <Subtitle>{t("body.subtitle")}</Subtitle>
+          <FittingsInfo>
+            <ComponentObserver
+              position="right"
+              Item={<Image src={armature} alt="armature" />}
+            />
+            <ComponentObserver Item={<Text>{t("body.introduction")}</Text>} />
+          </FittingsInfo>
+          <FittingsInfo>
+            <ComponentObserver
+              Item={<Image src={armature2} alt="armature" />}
+            />
+            <ComponentObserver
+              position="right"
+              Item={<Text>{t("body.keyStrengths")}</Text>}
+            />
+          </FittingsInfo>
+          <FittingsInfo>
+            <ComponentObserver
+              position="right"
+              Item={<Image src={armature3} alt="armature" />}
+            />
+            <ComponentObserver
+              Item={<Text>{t("body.versatileConstructionApplications")}</Text>}
+            />
+          </FittingsInfo>
+        </div>
         <Subtitle>{t("body.secondSubtitle")}</Subtitle>
         <FittingsInfo>
           <ComponentObserver Item={<Image src={grid} alt="grid" />} />
@@ -93,11 +97,11 @@ export const Home = () => {
         </FittingsInfo>
         <FittingsInfo>
           <ComponentObserver
-            Item={<Text>{t("body.advantagesAtGlance")}</Text>}
-          />
-          <ComponentObserver
             position="right"
             Item={<Image src={grid2} alt="grid" />}
+          />
+          <ComponentObserver
+            Item={<Text>{t("body.advantagesAtGlance")}</Text>}
           />
         </FittingsInfo>
         <FittingsInfo>
