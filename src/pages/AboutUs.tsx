@@ -1,23 +1,38 @@
 import { useTranslation } from "react-i18next";
+import { Container, SectionTitle, Paragraph, Div } from "./aboutUsStyles";
 
 export const AboutUs = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <h1>{t("aboutUs.title")}</h1>
-      <h2>{t("aboutUs.ourBeginnings")}</h2>
-      <p>{t("aboutUs.beginnings")}</p>
-      <h2>{t("aboutUs.ourExpertise")}</h2>
-      <p>{t("aboutUs.expertise")}</p>
-      <h2>{t("aboutUs.ourMission")}</h2>
-      <p>{t("aboutUs.mission")}</p>
-      <h2>{t("aboutUs.ourAdvantages")}</h2>
-      <p>{t("about.advantages")}</p>
-      <h2>{t("aboutUs.ourProjects")}</h2>
-      <p>{t("aboutUs.projects")}</p>
-      <h2>{t("aboutUs.contactUs")}</h2>
-      <p>{t("aboutUs.contac")}</p>
-    </div>
+    <Container>
+      <Div>
+        <SectionTitle>{t("aboutUs.title")}</SectionTitle>
+        <Paragraph>{t("aboutUs.subtitle")}</Paragraph>
+      </Div>
+      <Div>
+        <SectionTitle>{t("aboutUs.ourBeginnings")}</SectionTitle>
+        <Paragraph>{t("aboutUs.beginnings")}</Paragraph>
+      </Div>
+      <Div>
+        <SectionTitle>{t("aboutUs.ourExpertise")}</SectionTitle>
+        <Paragraph>{t("aboutUs.expertise")}</Paragraph>
+      </Div>
+      <Div>
+        <SectionTitle>{t("aboutUs.ourMission")}</SectionTitle>
+        <Paragraph>{t("aboutUs.mission")}</Paragraph>
+      </Div>
+      <Div>
+        <SectionTitle>{t("aboutUs.ourAdvantages")}</SectionTitle>
+        <Paragraph>
+          <ul>
+            <li>{t("aboutUs.quality")}</li>
+            <li>{t("aboutUs.innovations")}</li>
+            <li>{t("aboutUs.fastDelivery")}</li>
+          </ul>
+        </Paragraph>
+      </Div>
+
+    </Container>
   );
 };

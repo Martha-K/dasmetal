@@ -20,9 +20,9 @@ export const Footer = () => {
       </div>
       <Contact>
         <p>{t("footer.contact")}</p>
-        <a>+380 (66) 451-43-77</a>
-        <a>+380 (67) 232-18-47</a>
-        <a>0664514377@ukr.net</a>
+        <a href="tel:+380664514377">+380 (66) 451-43-77</a>
+        <a href="tel:+380672321847">+380 (67) 232-18-47</a>
+        <a href="mailto:0664514377@ukr.net">0664514377@ukr.net</a>
       </Contact>
       <address>
         <p>{t("footer.address")}</p>
