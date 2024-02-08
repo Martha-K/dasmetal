@@ -26,13 +26,13 @@ export const Div = styled.div`
   margin: 0 auto;
   padding: 20px;
   background-color: #f5f5f5;
-  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5); /* 8px вправо, 8px вниз, 30px розмиття */
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5); 
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
   margin-bottom: 40px;
 
   &:hover {
     transform: scale(1.02);
-    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.5); /* При наведенні велика тінь */
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.5); 
   }
 `;
