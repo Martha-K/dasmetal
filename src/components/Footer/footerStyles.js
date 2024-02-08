@@ -5,6 +5,13 @@ export const Div = styled.div`
   justify-content: space-around;
   background: #5e6b80;
   color: white;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    gap: 30px;
+  }
 `;
 
 export const Contact = styled.address`
@@ -19,12 +26,12 @@ export const Contact = styled.address`
     text-decoration: none;
     font-weight: bold;
     margin-bottom: 5px;
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out;
   }
 
   a:hover {
     color: black;
-    transform: scale(1.1); 
+    transform: scale(1.1);
   }
 `;
 

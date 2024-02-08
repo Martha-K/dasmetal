@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Div = styled.div`
   visibility: hidden;
+  max-width: 460px;
+  width: 100%;
 
   @keyframes fadeInFromLeft {
     from {

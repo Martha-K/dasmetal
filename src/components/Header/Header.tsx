@@ -5,12 +5,17 @@ import {
   NavList,
   StyledLink,
   Li,
-  Div,
   Logo,
   Flag,
   FlagsWrapper,
   Flags,
   Navigation,
+  Burger,
+  HeaderContent,
+  MobileNav,
+  MobileNavItem,
+  MobileNavList,
+  MobileNavLink,
 } from "./headerStyles";
 import logo from "../../img/logo.jpg";
 import { Footer } from "../Footer/Footer";
@@ -20,7 +25,6 @@ import i18n from "i18next";
 import uk from "../../img/flags/uk.png";
 import en from "../../img/flags/en.png";
 import ru from "../../img/flags/ru.png";
-
 
 const languages = [
   { name: "uk", img: uk },
@@ -35,6 +39,7 @@ interface Language {
 export const Header = () => {
   const { t } = useTranslation();
   const [hovered, setHovered] = useState(false);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [activeLanguage, setActiveLanguage] = useState(uk);
 
   const changeLanguage = (lang: Language) => {
@@ -43,9 +48,13 @@ export const Header = () => {
     setHovered(false);
   };
 
+  const toggleDropdown = () => {
+    setDropdownVisible(!isDropdownVisible);
+  };
+
   return (
     <div>
-      <Div>
+      <HeaderContent>
         <StyledLink to="/">
           <Logo src={logo} alt="Logo" />
         </StyledLink>
@@ -62,6 +71,27 @@ export const Header = () => {
                 <StyledLink to="/about-us">{t("header.aboutUs")}</StyledLink>
               </Li>
             </NavList>
+
+            <MobileNav>
+              <Burger onClick={toggleDropdown}></Burger>
+              {isDropdownVisible && (
+                <MobileNavList onClick={toggleDropdown}>
+                  <MobileNavItem>
+                    <MobileNavLink to="/">{t("header.home")}</MobileNavLink>
+                  </MobileNavItem>
+                  <MobileNavItem>
+                    <MobileNavLink to="/products">
+                      {t("header.products")}
+                    </MobileNavLink>
+                  </MobileNavItem>
+                  <MobileNavItem>
+                    <MobileNavLink to="/about-us">
+                      {t("header.aboutUs")}
+                    </MobileNavLink>
+                  </MobileNavItem>
+                </MobileNavList>
+              )}
+            </MobileNav>
           </Nav>
         </Navigation>
         <FlagsWrapper
@@ -81,11 +111,10 @@ export const Header = () => {
               ))}
           </Flags>
         </FlagsWrapper>
-      </Div>
+      </HeaderContent>
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>
-      <Footer></Footer>
     </div>
   );
 };
