@@ -43,12 +43,6 @@ export const MobileNavLink = styled(NavLink)`
   font-size: 18px;
 `;
 
-export const HeaderWrapper = styled.div`
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-`;
-
 export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;

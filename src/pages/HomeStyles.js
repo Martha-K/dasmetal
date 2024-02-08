@@ -11,7 +11,6 @@ export const StyledSlide = styled.img`
 `;
 
 export const Hero = styled.div`
-  /* margin-top: 30px; */
   padding: 30px;
 `;
 

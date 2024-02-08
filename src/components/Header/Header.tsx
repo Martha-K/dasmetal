@@ -12,7 +12,6 @@ import {
   Navigation,
   Burger,
   HeaderContent,
-  HeaderWrapper,
   MobileNav,
   MobileNavItem,
   MobileNavList,
@@ -54,7 +53,7 @@ export const Header = () => {
   };
 
   return (
-    <HeaderWrapper>
+    <div>
       <HeaderContent>
         <StyledLink to="/">
           <Logo src={logo} alt="Logo" />
@@ -116,6 +115,6 @@ export const Header = () => {
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>
-    </HeaderWrapper>
+    </div>
   );
 };
