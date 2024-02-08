@@ -34,13 +34,7 @@ export const ButtonStyles = styled.div`
   padding-bottom: ${(props) => (props["data-active"] ? "100px" : "30px")};
   background-color: ${(props) =>
     props["data-active"] ? "lightblue" : "#8fa8c7"};
-     transition: all 0.3s ease-in-out;
-
-
-&:hover {
-  transform: scale(1.02);
-  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.5);
-}
+  transition: all 0.3s ease-in-out;
 `;
 
 export const ButtonContainer = styled.div`
@@ -97,7 +91,6 @@ export const Card = styled.div`
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
-
 
   &:hover {
     transform: scale(1.02);

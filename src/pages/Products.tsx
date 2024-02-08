@@ -15,7 +15,6 @@ import { mockProduct } from "../mockProducts";
 
 export const Products = () => {
   const [isArmature, setIsArmature] = useState(true);
-  console.log("isArmature", isArmature);
   const armatureSelect = () => {
     !isArmature && setIsArmature(true);
   };
