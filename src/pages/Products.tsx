@@ -11,7 +11,7 @@ export const Products = () => {
             <div key={el.name}>
               <h3>{el.name}</h3>
               <img src={el.image} alt="product" />
-              <p>Price: {el.price}</p>
+              <p>Ціна: {el.price}</p>
               {el.inStock && <p>В наявності</p>}
             </div>
           ))}
