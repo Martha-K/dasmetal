@@ -6,6 +6,8 @@ import {
   ButtonWrapper,
   ButtonContainer,
   ButtonStyles,
+  RoundCorner,
+  InnerDiv,
   Div,
   ProductName,
   CardInfoWrapper,
@@ -26,6 +28,9 @@ export const Products = () => {
     <div>
       <ButtonContainer>
         <ButtonStyles data-active={isArmature}>
+          <RoundCorner data-active={isArmature}>
+            <InnerDiv></InnerDiv>
+          </RoundCorner>
           <Div>
             <ButtonWrapper
               onClick={armatureSelect}
