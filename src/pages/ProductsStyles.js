@@ -28,13 +28,32 @@ export const ProductName = styled.p`
 `;
 
 export const ButtonStyles = styled.div`
-  /* background-color: #8fa8c7; */
+  position: relative;
   border-radius: 20px;
   padding: 30px;
   padding-bottom: ${(props) => (props["data-active"] ? "100px" : "30px")};
   background-color: ${(props) =>
     props["data-active"] ? "lightblue" : "#8fa8c7"};
   transition: all 0.3s ease-in-out;
+`;
+
+export const RoundCorner = styled.div`
+  position: absolute;
+  bottom: -20px;
+  left: -60px;
+  background-color: lightblue;
+  border-right: 20px solid lightblue;
+  border-bottom: 20px solid lightblue;
+  border-radius: 20px;
+  opacity: ${(props) => (props["data-active"] ? "1" : "0")};
+  transition-delay: ${(props) => (props["data-active"] ? "0.2s" : "0")};
+`;
+
+export const InnerDiv = styled.div`
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-bottom-right-radius: 20px;
 `;
 
 export const ButtonContainer = styled.div`
