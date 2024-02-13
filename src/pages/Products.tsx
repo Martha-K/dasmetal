@@ -15,6 +15,9 @@ import {
 } from "./ProductsStyles";
 import { mockProduct } from "../mockProducts";
 
+
+const token = process.env.REACT_APP_TOKEN
+
 export const Products = () => {
   const [isArmature, setIsArmature] = useState(true);
 
@@ -23,7 +26,7 @@ export const Products = () => {
       "https://thingproxy.freeboard.io/fetch/https://my.prom.ua/api/v1/products/list",
       {
         headers: {
-          Authorization: "Bearer token",
+          Authorization: `Bearer ${token}`,
         },
       }
     )
@@ -41,24 +44,33 @@ export const Products = () => {
   return (
     <div>
       <ButtonContainer>
-        <ButtonStyles data-active={isArmature}>
+        <ButtonStyles data-active={isArmature} onClick={armatureSelect}>
           <RoundCorner data-active={isArmature}>
-            <InnerDiv></InnerDiv>
+            <InnerDiv />
           </RoundCorner>
           <Div>
-            <ButtonWrapper
-              onClick={armatureSelect}
-              data-image="armature"
-            ></ButtonWrapper>
-            <ProductName>Armature</ProductName>
+            <ButtonWrapper data-image="armature"></ButtonWrapper>
+            <ProductName>
+              <p>АРМАТУРА</p>
+            </ProductName>
           </Div>
+          <RoundCorner data-active={isArmature} data-isright={true}>
+            <InnerDiv data-isright={true} />
+          </RoundCorner>
         </ButtonStyles>
-        <ButtonStyles data-active={!isArmature}>
+        <ButtonStyles data-active={!isArmature} onClick={gridSelect}>
+          <RoundCorner data-active={!isArmature}>
+            <InnerDiv />
+          </RoundCorner>
           <Div>
-            <ButtonWrapper onClick={gridSelect} data-image="grid">
-              <ProductName>Grid</ProductName>
-            </ButtonWrapper>
+            <ButtonWrapper data-image="grid"></ButtonWrapper>
+            <ProductName>
+              <p>СІТКА</p>
+            </ProductName>
           </Div>
+          <RoundCorner data-active={!isArmature} data-isright={true}>
+            <InnerDiv data-isright={true} />
+          </RoundCorner>
         </ButtonStyles>
       </ButtonContainer>
       <ProductWrapping>

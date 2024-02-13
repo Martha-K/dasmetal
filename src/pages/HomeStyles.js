@@ -8,6 +8,10 @@ export const StyledSlide = styled.img`
   display: block;
   margin: auto;
   border-radius: 20px;
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
 `;
 
 export const Hero = styled.div`

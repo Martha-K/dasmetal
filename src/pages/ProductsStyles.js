@@ -1,30 +1,48 @@
 import styled from "styled-components";
-import slide3 from "../img/slide3.jpg";
+import armature from "../img/armature.jpg";
 import slide from "../img/slide.jpg";
 
 export const ButtonWrapper = styled.div`
   position: relative;
   background-image: ${(props) =>
-    props["data-image"] === "armature" ? `url(${slide3})` : `url(${slide})`};
-  width: 560px;
+    props["data-image"] === "armature" ? `url(${armature})` : `url(${slide})`};
+  width: 30vw;
   height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  filter: blur(5px);
+  filter: blur(3px);
+
+  @media (max-width: 760px) {
+    background-image: none;
+    height: 80px;
+  }
 `;
 
 export const Div = styled.div`
   overflow: hidden;
+  position: relative;
 `;
 
-export const ProductName = styled.p`
+export const ProductName = styled.div`
   position: absolute;
+  width: 100%;
+  height: calc(50% - 20px);
   font-size: 60px;
-  right: 70%;
   bottom: 50%;
   color: white;
+  text-align: center;
+  font-weight: 500;
+
+  @media (max-width: 1200px) {
+    font-size: 36px;
+    height: calc(50% - 65px);
+  }
+  @media (max-width: 760px) {
+    height: calc(75% - 2px);
+    text-align: center;
+  }
 `;
 
 export const ButtonStyles = styled.div`
@@ -32,34 +50,49 @@ export const ButtonStyles = styled.div`
   border-radius: 20px;
   padding: 30px;
   padding-bottom: ${(props) => (props["data-active"] ? "100px" : "30px")};
+  margin-bottom: ${(props) => (props["data-active"] ? "0" : "70px")};
   background-color: ${(props) =>
-    props["data-active"] ? "lightblue" : "#8fa8c7"};
+    props["data-active"] ? "#00416A" : "#00416A80"};
   transition: all 0.3s ease-in-out;
+
+  @media (max-width: 760px) {
+    padding: 20px;
+    padding-bottom: ${(props) => (props["data-active"] ? "50px" : "15px")};
+    margin-bottom: ${(props) => (props["data-active"] ? "0" : "35px")};
+  }
 `;
 
 export const RoundCorner = styled.div`
   position: absolute;
-  bottom: -20px;
-  left: -60px;
-  background-color: lightblue;
-  border-right: 20px solid lightblue;
-  border-bottom: 20px solid lightblue;
+  bottom: -19px;
+  left: ${(props) => !props["data-isright"] && "-20px"};
+  right: ${(props) => props["data-isright"] && "-20px"};
+  background-color: #00416a;
+  border-right: ${(props) => !props["data-isright"] && "20px solid #00416A;"};
+  border-left: ${(props) => props["data-isright"] && "20px solid #00416A;"};
+
+  border-bottom: 20px solid #00416a;
   border-radius: 20px;
   opacity: ${(props) => (props["data-active"] ? "1" : "0")};
-  transition-delay: ${(props) => (props["data-active"] ? "0.2s" : "0")};
+  transition-delay: ${(props) => (props["data-active"] ? "0.3s" : "0")};
+
+  @media (max-width: 760px) {
+    transition-delay: ${(props) => (props["data-active"] ? "0.3s" : "0")};
+  }
 `;
 
 export const InnerDiv = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 20px;
+  height: 20px;
   background-color: white;
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: ${(props) => !props["data-isright"] && "20px"};
+  border-bottom-left-radius: ${(props) => props["data-isright"] && "20px"};
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   margin-top: 10px;
-  gap: 100px;
+  gap: 10vw;
   justify-content: center;
   align-items: start;
 `;
@@ -74,7 +107,7 @@ export const Img = styled.img`
 `;
 
 export const ProductWrapping = styled.div`
-  background-color: lightblue;
+  background-color: #00416a;
   padding: 40px;
 `;
 
@@ -94,6 +127,7 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 0.75fr));
   grid-gap: 40px;
+  justify-content: center;
 
   @media (max-width: 900px) {
     display: flex;
