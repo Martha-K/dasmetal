@@ -23,7 +23,7 @@ export const Products = () => {
       "https://thingproxy.freeboard.io/fetch/https://my.prom.ua/api/v1/products/list",
       {
         headers: {
-          Authorization: "Bearer 1feb5dbb6de2fc265a0291bb0f71ee4e7412655e",
+          Authorization: "Bearer token",
         },
       }
     )
