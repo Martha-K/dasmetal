@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Img,
   CardWrapper,
@@ -17,6 +17,20 @@ import { mockProduct } from "../mockProducts";
 
 export const Products = () => {
   const [isArmature, setIsArmature] = useState(true);
+
+  useEffect(() => {
+    fetch(
+      "https://thingproxy.freeboard.io/fetch/https://my.prom.ua/api/v1/products/list",
+      {
+        headers: {
+          Authorization: "Bearer 1feb5dbb6de2fc265a0291bb0f71ee4e7412655e",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => console.log("data.message", data));
+  }, []);
+
   const armatureSelect = () => {
     !isArmature && setIsArmature(true);
   };
@@ -48,8 +62,8 @@ export const Products = () => {
         </ButtonStyles>
       </ButtonContainer>
       <ProductWrapping>
-        {mockProduct?.map((el) => (
-          <CardWrapper>
+        {mockProduct?.map((el, index) => (
+          <CardWrapper key={`${isArmature ? "armature" : "grid"}_${index}`}>
             {el[isArmature ? "armature" : "grid"]?.map((item) => (
               <Card key={item.id}>
                 <h2>{item.name}</h2>
