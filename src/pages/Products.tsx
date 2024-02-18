@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { CardModal } from "../components/CardModal/CardModal";
 import {
   Img,
   CardWrapper,
@@ -13,17 +14,32 @@ import {
   CardInfoWrapper,
   ProductWrapping,
 } from "./ProductsStyles";
-import { mockProduct } from "../mockProducts";
+import { use } from "i18next";
 
+const token = process.env.REACT_APP_TOKEN;
 
-const token = process.env.REACT_APP_TOKEN
+export type Product = {
+  id: string;
+  name: string;
+  price: number;
+  main_image: string;
+  currency: string;
+  presence: string;
+  description: string;
+  description_multilang: { ru: string; uk: string };
+  group: { name: string };
+};
+
+type Products = Product[];
 
 export const Products = () => {
   const [isArmature, setIsArmature] = useState(true);
+  const [selectedCard, setSelectedCard] = useState<null | Product>(null);
+  const [data, setData] = useState<Products>([]);
 
   useEffect(() => {
     fetch(
-      "https://thingproxy.freeboard.io/fetch/https://my.prom.ua/api/v1/products/list",
+      "https://thingproxy.freeboard.io/fetch/https://my.prom.ua/api/v1/products/list?limit=50",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -31,14 +47,35 @@ export const Products = () => {
       }
     )
       .then((response) => response.json())
-      .then((data) => console.log("data.message", data));
+      .then((data) => setData(data.products));
   }, []);
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedCard(null);
+      }
+    };
+
+    if (selectedCard !== null) {
+      document.addEventListener("keydown", handleKeyPress);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [selectedCard]);
 
   const armatureSelect = () => {
     !isArmature && setIsArmature(true);
   };
+
   const gridSelect = () => {
     isArmature && setIsArmature(false);
+  };
+
+  const isOpenModal = (id: string) => {
+    const card = data.find((el) => el.id === id);
+    card && setSelectedCard(card);
   };
 
   return (
@@ -74,22 +111,33 @@ export const Products = () => {
         </ButtonStyles>
       </ButtonContainer>
       <ProductWrapping>
-        {mockProduct?.map((el, index) => (
-          <CardWrapper key={`${isArmature ? "armature" : "grid"}_${index}`}>
-            {el[isArmature ? "armature" : "grid"]?.map((item) => (
-              <Card key={item.id}>
-                <h2>{item.name}</h2>
+        <CardWrapper>
+          {data
+            .filter(
+              (item) =>
+                item.group.name ===
+                (isArmature ? "Арматура" : "Сетка" || "Корневая группа")
+            )
+            .map((el) => (
+              <Card key={el.id} onClick={() => isOpenModal(el.id)}>
+                <h2>{el.name}</h2>
                 <CardInfoWrapper>
-                  <Img src={item.image} />
+                  <Img src={el.main_image} />
                   <div>
-                    <p>Ціна: {item.price}</p>
-                    <p>{item.inStock ? "в наявності" : "немає в наявності"}</p>
+                    <p>
+                      Ціна: {el.price} {el.currency && "грн"}/м
+                    </p>
+                    <p>
+                      {el.presence === "available"
+                        ? "B наявності"
+                        : "Hемає в наявності"}
+                    </p>
                   </div>
                 </CardInfoWrapper>
               </Card>
             ))}
-          </CardWrapper>
-        ))}
+        </CardWrapper>
+        {selectedCard && <CardModal card={selectedCard}></CardModal>}
       </ProductWrapping>
     </div>
   );

@@ -54,6 +54,7 @@ export const ButtonStyles = styled.div`
   background-color: ${(props) =>
     props["data-active"] ? "#00416A" : "#00416A80"};
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 
   @media (max-width: 760px) {
     padding: 20px;
@@ -92,14 +93,16 @@ export const InnerDiv = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   margin-top: 10px;
-  gap: 10vw;
+  gap: 7vw;
   justify-content: center;
   align-items: start;
 `;
 
 export const Img = styled.img`
   width: 260px;
+  height: 180px;
   border-radius: 20px;
+  object-fit: cover;
 
   @media (max-width: 550px) {
     width: 160px;
@@ -144,6 +147,7 @@ export const Card = styled.div`
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.02);

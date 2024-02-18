@@ -18,7 +18,6 @@ import {
   MobileNavLink,
 } from "./headerStyles";
 import logo from "../../img/logo.jpg";
-import { Footer } from "../Footer/Footer";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import i18n from "i18next";
